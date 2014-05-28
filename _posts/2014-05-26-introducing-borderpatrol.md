@@ -147,8 +147,9 @@ Furthermore, with the complexity of nginx, the fact that we don't actually use
 most of it, the features we want to add over the year, and the performance
 requirements inherent in fronting of every request made into lookout.com, we're
 currently thinking about dropping nginx as the engine and moving to a JVM-based
-platform. This would allow us to build rate limiting, session storage, and request
-routing components as services, if we so desired, relying heavily on evented IO.
+platform. This would allow us to build rate limiting, load shedding, session
+storage, and request routing components as services, if we so desired, relying
+heavily on evented IO.
 
 Lookout is pleased to announce that we're open-sourcing **Border Patrol**. If
 you'd like to know more, further details can be found in the project's [public

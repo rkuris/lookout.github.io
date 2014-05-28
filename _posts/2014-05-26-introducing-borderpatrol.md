@@ -19,7 +19,7 @@ cross-service session composition and the tool we developed to solve it,
 ## Growing pains
 
 Historically, Lookout had used both Ruby and [Rails](https://rubyonrails.org);
-the original **Lookout Mobile Security** application back-end was built as a single
+the original [Lookout Mobile Security](https://play.google.com/store/apps/details?id=com.lookout) application back-end was built as a single
 Ruby on Rails application. It was a massive, sprawling application that did everything: served the
 JavaScript-based Lookout front-end applications; handled billing; housed
 asynchronous worker jobs; managed the various databases; held all metadata for
@@ -39,26 +39,26 @@ Since Lookout only ever had one service, we'd never had to think about
 service-to-service authentication. That changed as we dipped our big toe into the
 ocean of [SOA](http://martinfowler.com/articles/microservices.html) and realized
 we would need to be a new foundation service that we named
-[Keymaster](http://i1.ytimg.com/vi/N9L7UUp0FxY/hqdefault.jpg).
+**[Keymaster]**(http://i1.ytimg.com/vi/N9L7UUp0FxY/hqdefault.jpg).
 
-Keymaster hands out short-lived authentication tokens to services and
+**Keymaster** hands out short-lived authentication tokens to services and
 devices, allowing them to make authenticated calls to other services. It's like
 [Kerberos](http://en.wikipedia.org/wiki/Kerberos_(protocol) for RESTful API calls.
 
 **Keymaster** is a whole other blog post, but there's one important point to
 cover here: **Keymaster** tokens are issued by a specific service for another
-specific service. E.g.: The **LocationService** gets a token to talk to the
-**PushService** to initiate a device locate.
+specific service. E.g.: The _LocationService_ gets a token to talk to the
+_PushService_ to initiate a device locate.
 
 This is great for back-end services communicating with other back-end services.
 But when you're dealing with Javascript front-end applications that might need
 to speak to or pull in data from multiple services, **Keymaster** tokens broke down.
-To make this work we'd have to:
+To make this work we'd have to do one of the following:
 
   1. The monorail would have to proxy requests to other services or
-  1. We'd need to implement Keymaster token signing and encryption in JavaScript
+  1. We'd need to implement **Keymaster** token signing and encryption in JavaScript
   1. Have the JavaScript applications use the same APIs that devices did to
-     request tokens from Keymaster.
+     request tokens from **Keymaster**.
 
 None of these were attractive options. The first meant adding more code to the
 sprawl. The second meant implementing/relying on JavaScript cryptographic
@@ -147,8 +147,8 @@ Furthermore, with the complexity of nginx, the fact that we don't actually use
 most of it, the features we want to add over the year, and the performance
 requirements inherent in fronting of every request made into lookout.com, we're
 currently thinking about dropping nginx as the engine and moving to a JVM-based
-platform. This would allow us to build Rate Limiting, Session Store, and Request
-Routing components as services, if we so desired, relying heavily on evented IO.
+platform. This would allow us to build rate limiting, session storage, and request
+routing components as services, if we so desired, relying heavily on evented IO.
 
 Lookout is pleased to announce that we're open-sourcing **Border Patrol**. If
 you'd like to know more, further details can be found in the project's [public
@@ -156,10 +156,10 @@ GitHub repository](https://github.com/lookout/ngx_borderpatrol).
 
 ## Credit where credit is due
 
-**Border Patrol** was conceived of by me with some help from Dana Contreras,
-started by [R. Tyler Croy](https://github.com/rcroy), and has been worked on by
-a variety of people at Lookout, all of whom should be given credit for this blog
-post, where the service is today, and where it's going. Those people are
-Dirk Koehler, Nathan Smith, and [William Kimeria](https://github.com/wkimeria).
+**Border Patrol** was conceived of by me, started by [R. Tyler Croy](https://github.com/rcroy),
+and has been worked on by both of us and a variety of people at Lookout,
+all of whom should be given credit for this blog post, where the service is today,
+and where it's going. Those people are Dirk Koehler, Nathan Smith,
+[William Kimeria](https://github.com/wkimeria), and Christopher Chong.
 
 *- [Rob Wygand](https://github.com/rwygand)*

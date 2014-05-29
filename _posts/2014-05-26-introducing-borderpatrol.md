@@ -39,26 +39,26 @@ Since Lookout only ever had one service, we'd never had to think about
 service-to-service authentication. That changed as we dipped our big toe into the
 ocean of [SOA](http://martinfowler.com/articles/microservices.html) and realized
 we would need to be a new foundation service that we named
-**[Keymaster]**(http://i1.ytimg.com/vi/N9L7UUp0FxY/hqdefault.jpg).
+[Keymaster](http://i1.ytimg.com/vi/N9L7UUp0FxY/hqdefault.jpg).
 
-**Keymaster** hands out short-lived authentication tokens to services and
+Keymaster hands out short-lived authentication tokens to services and
 devices, allowing them to make authenticated calls to other services. It's like
 [Kerberos](http://en.wikipedia.org/wiki/Kerberos_(protocol) for RESTful API calls.
 
-**Keymaster** is a whole other blog post, but there's one important point to
-cover here: **Keymaster** tokens are issued by a specific service for another
+Keymaster is a whole other blog post, but there's one important point to
+cover here: Keymaster tokens are issued by a specific service for another
 specific service. E.g.: The _LocationService_ gets a token to talk to the
 _PushService_ to initiate a device locate.
 
 This is great for back-end services communicating with other back-end services.
 But when you're dealing with Javascript front-end applications that might need
-to speak to or pull in data from multiple services, **Keymaster** tokens broke down.
+to speak to or pull in data from multiple services, Keymaster tokens broke down.
 To make this work we'd have to do one of the following:
 
   1. The monorail would have to proxy requests to other services or
-  1. We'd need to implement **Keymaster** token signing and encryption in JavaScript
+  1. We'd need to implement Keymaster token signing and encryption in JavaScript
   1. Have the JavaScript applications use the same APIs that devices did to
-     request tokens from **Keymaster**.
+     request tokens from Keymaster.
 
 None of these were attractive options. The first meant adding more code to the
 sprawl. The second meant implementing/relying on JavaScript cryptographic
@@ -97,25 +97,25 @@ Javascript running in the browser.
 
 ## Meet Border Patrol
 
-**Border Patrol** is an [nginx](http://nginx.org/) module implemented in
+Border Patrol is an [nginx](http://nginx.org/) module implemented in
 [Lua](http://www.lua.org) that performs authentication at the edge of the
-network. **Border Patrol** is basically a big session store whose values are the
-**Keymaster** tokens for the upstream services a browser wants to speak to.
+network. Border Patrol is basically a big session store whose values are the
+Keymaster tokens for the upstream services a browser wants to speak to.
 
 Here's an example:
 
   1. A client requests a protected resource from a service.
-  1. **Border Patrol** determines there is not a valid session for this
+  1. Border Patrol determines there is not a valid session for this
      request, and simply let's the request pass through
   1. The upstream service redirects the user to it's own hosted login page.
   1. The user fills out their credentials and submits the form. This POSTs to
-     **Border Patrol** who validates the credentials via **Keymaster** and returns
+     Border Patrol who validates the credentials via Keymaster and returns
      one or more service tokens
-  1. **Border Patrol** creates a session id and returns it to the client via an
-     HTTP cookie: this session id informs **Border Patrol** how to retrieve the
+  1. Border Patrol creates a session id and returns it to the client via an
+     HTTP cookie: this session id informs Border Patrol how to retrieve the
      service tokens
   1. Subsequent requests from the browser present their session id via the cookie,
-     and **Border Patrol** injects the appropriate service token into the request
+     and Border Patrol injects the appropriate service token into the request
      headers
 
 <center>
@@ -124,8 +124,8 @@ requests in Border Patrol"/><br/><strong>Series of requests made in Border
 Patrol</strong>
 </center>
 
-Currently, **Border Patrol** relies on [memcached](http://memcached.org) for its
-session store.  Additionally, we lean on **Keymaster** to do the actual user
+Currently, Border Patrol relies on [memcached](http://memcached.org) for its
+session store.  Additionally, we lean on Keymaster to do the actual user
 authentication and token generation. However, any auth-token system could be
 used. Which leads me to...
 
@@ -138,9 +138,9 @@ spaghetti inside of the nginx module itself. One thought here is to move to nati
 nginx extensions which would allow us to add or extend existing nginx directives,
 making configuration simpler.
 
-But given the direction we're taking **Border Patrol**, we might need to do more
+But given the direction we're taking Border Patrol, we might need to do more
 than that. We're already in the process of moving ownership of login and account
-management to a Rails service called **Checkpoint**. This lets us build services
+management to a Rails service called Checkpoint. This lets us build services
 that never have to care about login or password management.
 
 Furthermore, with the complexity of nginx, the fact that we don't actually use
@@ -151,13 +151,13 @@ platform. This would allow us to build rate limiting, load shedding, session
 storage, and request routing components as services, if we so desired, relying
 heavily on evented IO.
 
-Lookout is pleased to announce that we're open-sourcing **Border Patrol**. If
+Lookout is pleased to announce that we're open-sourcing Border Patrol. If
 you'd like to know more, further details can be found in the project's [public
 GitHub repository](https://github.com/lookout/ngx_borderpatrol).
 
 ## Credit where credit is due
 
-**Border Patrol** was conceived of by me, started by [R. Tyler Croy](https://github.com/rcroy),
+Border Patrol was conceived of by me, started by [R. Tyler Croy](https://github.com/rcroy),
 and has been worked on by both of us and a variety of people at Lookout,
 all of whom should be given credit for this blog post, where the service is today,
 and where it's going. Those people are Dirk Koehler, Nathan Smith,

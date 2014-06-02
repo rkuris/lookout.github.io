@@ -21,10 +21,10 @@ cross-service session composition and the tool we developed to solve it,
 Historically, Lookout had used both Ruby and [Rails](https://rubyonrails.org);
 the original [Lookout Mobile Security](https://play.google.com/store/apps/details?id=com.lookout) application back-end was built as a single
 Ruby on Rails application. It was a massive, sprawling application that did everything: served the
-JavaScript-based Lookout front-end applications; handled billing; housed
-asynchronous worker jobs; managed the various databases; held all metadata for
-backed up devices; was the interface for all devices communicating with Lookout;
-and on. and on and on.
+JavaScript-based Lookout front-end applications, handled billing, housed
+asynchronous worker jobs, managed the various databases, held all metadata for
+backed up devices, was the interface for all devices communicating with Lookout
+and on and on and on.
 
 As we set out building the [Mobile Threat Network](https://www.lookout.com/mobile-threat-network)
 and began to make the transition from a monolithic Rails application
@@ -43,7 +43,7 @@ we would need to be a new foundation service that we named
 
 Keymaster hands out short-lived authentication tokens to services and
 devices, allowing them to make authenticated calls to other services. It's like
-[Kerberos](http://en.wikipedia.org/wiki/Kerberos_(protocol) for RESTful API calls.
+[Kerberos](http://en.wikipedia.org/wiki/Kerberos_(protocol)) for RESTful API calls.
 
 Keymaster is a whole other blog post, but there's one important point to
 cover here: Keymaster tokens are issued by a specific service for another

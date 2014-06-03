@@ -157,10 +157,10 @@ GitHub repository](https://github.com/lookout/ngx_borderpatrol).
 
 ## Credit where credit is due
 
-Border Patrol was conceived of by me, started by [R. Tyler Croy](https://github.com/rcroy),
+Border Patrol was conceived of by me, started by [R. Tyler Croy](https://github.com/rtyler),
 and has been worked on by both of us and a variety of people at Lookout,
 all of whom should be given credit for this blog post, where the service is today,
-and where it's going. Those people are Dirk Koehler, Nathan Smith,
+and where it's going. Those people are [Dirk Koehler](https://github.com/phrinx), Nathan Smith,
 [William Kimeria](https://github.com/wkimeria), and Christopher Chong.
 
 *- [Rob Wygand](https://github.com/rwygand)*

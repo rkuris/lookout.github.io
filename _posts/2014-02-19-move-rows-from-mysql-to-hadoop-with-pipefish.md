@@ -62,18 +62,18 @@ Usage
 -----
 
 Less than 200 lines of C later, I had my utility:
-```
+~~~
   $ pf --defaults_file=~/passwd --hdfs_path="/user/hive/warehouse/my.db/table.txt" --overwrite --sql="select * from my.table"
-```
+~~~
 The passwd file is formatted as a MySQL config file:
-```
+~~~
   $ cat ~/passwd
   [client]
   host     = my_production_server
   user     = copy_user
   password = showmesomethinggood
   database = production
-```
+~~~
 The `--overwrite` flag does what you might expect. Without the flag, the utility attempts to append, so a file must already exist.
 
 The `--sql` parameter takes a valid SQL query.
@@ -81,7 +81,7 @@ It need not be simply `select * from..`.
 Use this flexibility to transform data as you like.
 
 The usage in summary:
-```
+~~~
   $ pf --help
   Using JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64
   args:
@@ -94,7 +94,7 @@ The usage in summary:
    --sql='sql statement'
    [--overwrite]
   user, host, db, and password settings override those specified in defaults_file.
-```
+~~~
 
 The JNI and libhdfs
 -------------------

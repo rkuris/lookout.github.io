@@ -1,0 +1,139 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'octokit'
+require 'erb'
+require 'json'
+require 'time'
+
+
+def new_repo(events, count)
+  repo_count = count == 1 ? "1 repository" : "#{count} repositories"
+  repo_events = events.select { |e| e.type == 'PublicEvent' }
+
+  ERB.new("""
+This week we've open sourced <%= repo_count %>:
+
+<% repo_events.each do |e| %>
+ * [<%= e.repo.name %>](https://github.com/<%= e.repo.name %>) - *DESCRIPTION*
+<% end %>
+""").result(binding)
+end
+
+def raw_numbers(event_types)
+  data = []
+
+  event_types.each do |type, count|
+    case type
+    when 'IssuesEvent'
+      data << "#{count} issues created"
+    when 'PushEvent'
+      data << "#{count} git pushes"
+    when 'CommitCommentEvent'
+      data << "#{count} commit comments"
+    when 'PublicEvent'
+      data << "#{count} repositories open sourced"
+    when "PullRequestEvent"
+      data << "#{count} pull requests created"
+    when 'PullRequestReviewCommentEvent'
+      data << "#{count} comments on pull requests"
+    when 'ForkEvent'
+      data << "#{count} repositories forked"
+    end
+  end
+
+  ERB.new("""
+<% data.each do |line| %> * <%= line %>
+<% end %>
+""").result(binding)
+end
+
+def main
+  begin
+    # Load all 300 <_<
+    Octokit.auto_paginate = true
+    events = Octokit::Client.new.organization_public_events('lookout')
+    puts "Loaded #{events.size} events"
+
+    week_ago  = Time.now.utc - (86400 * 7)
+    # Make sure we're only working with the last week's work of events
+    events = events.select { |e| e.created_at > week_ago }
+
+    event_types = {}
+    actors = {}
+    event_overview = []
+
+    events.each do |event|
+      type = event.type
+      actor = event.actor.login
+
+      if event_types[type].nil?
+        event_types[type] = 0
+      end
+      event_types[type] += 1
+
+      # watch events aren't interesting for actor tracking
+      unless (type == 'WatchEvent' || actor == 'lookout')
+        if actors[actor].nil?
+          actors[actor] = {:gravatar => event.actor.gravatar_id, :count => 0}
+        end
+        actors[actor][:count] += 1
+        end
+    end
+
+    puts '#####################################################################'
+    puts '############        RENDERED TEMPLATE BELOW        ##################'
+    puts '#####################################################################'
+
+    t = ERB.new(DATA.read)
+    puts t.result(binding)
+
+  rescue JSON::ParserError
+    puts "Please only pipe JSON into me"
+    exit 1
+  end
+end
+
+
+main
+
+__END__
+---
+layout: post
+title: Lookout Open Source Weekly Rollup 23
+tags:
+- weekly-oss
+- opensource
+---
+
+Over the past week we've been doing quite a lot of open source work within our
+[GitHub organization](https://github.com/lookout). Here's a roll-up of what's
+been happening!
+
+
+First the raw numbers:
+
+<%= raw_numbers(event_types) %>
+
+
+### New repositories
+<% if event_types['PublicEvent'] %>
+  <%= new_repo(events, event_types['PublicEvent']) %>
+<% end %>
+
+Here's a quick summary of what we've been doing this past week with open source
+at Lookout:
+
+
+### Contributors
+
+<% actors.sort.each do |actor, data| %>
+  <div style="float: left; margin: 10px;">
+  <img align="absmiddle" src="http://www.gravatar.com/avatar/<%= data[:gravatar] %>?s=48"/>
+  <br/>
+  <strong>
+  <a href="https://github.com/<%= actor %>" target="_blank"><%= actor %></a>
+  </strong>
+  </div>
+<% end %>
+<br clear="all"/>

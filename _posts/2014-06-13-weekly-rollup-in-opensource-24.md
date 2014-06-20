@@ -6,8 +6,10 @@ tags:
 - opensource
 ---
 
-It is hackathon week here at Lookout so we had a little less than usual open source activity in our [GitHub organization](https://github.com/lookout).  Still, we wanted to summarizes what open source activity we did have this week.  Here's a roll-up of what's
-been happening!
+It is hackathon week here at Lookout so we had a little less than usual open
+source activity in our [GitHub organization](https://github.com/lookout).
+Still, we wanted to summarizes what open source activity we did have this week.
+Here's a roll-up of what's been happening!
 
 The raw numbers:
 
@@ -16,8 +18,10 @@ The raw numbers:
  * 3 repositories forked
  * 1 issues created
  * 5 commit comments
- 
-Hackathon this week so no new repositories were open sourced, but some of the hackathon projects seem like prime candidates for the near future.
+
+
+Hackathon this week so no new repositories were open sourced, but some of the
+hackathon projects seem like prime candidates for the near future.
 
 
 ### Contributors

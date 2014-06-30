@@ -193,3 +193,8 @@ triage and ultimately resolve those kinds of issues, but at least these tools
 give you the information you need to know what's going on, and [knowing is half
 the
 battle](http://cdn.churchm.ag/wp-content/uploads/2014/03/knowing-is-half-the-battle.jpg).
+
+
+
+
+*- [R. Tyler Croy](https://github.com/rtyler)*

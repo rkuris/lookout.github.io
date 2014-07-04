@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Open Source Roolup for Week #27"
+title: "Open Source Rollup for Week #27"
 tags:
 - weekly-oss
 - opensource

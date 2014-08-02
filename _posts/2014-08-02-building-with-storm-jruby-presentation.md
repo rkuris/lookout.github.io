@@ -12,10 +12,10 @@ tags:
 
 
 With this year's [JRubyConf EU](http://2014.jrubyconf.eu) now over, we can
-finally post the slids for [Ian
+finally post the slides for [Ian
 Smith](https://github.com/ismith) and [R. Tyler
-Croy's](https://github.com/rtyler) talk: "Building a Scalable
-Messaging Fabric with JRuby and Storm."
+Croy's](https://github.com/rtyler) talk: **Building a Scalable
+Messaging Fabric with JRuby and Storm**.
 
 We expect the video of the presentation to be posted at a later date, but
 for now we just have the slides:

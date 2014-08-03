@@ -23,6 +23,7 @@ for now we just have the slides:
  * [Presentation](/files/building-scalable-messaging-fabric-jruby.pdf)
  * [Presentation *with*
    notes](/files/building-scalable-messaging-fabric-jruby.notes.pdf)
+ * [Presentation (.pptx)](/files/building-scalable-messaging-fabric-jruby.pptx)
 
 
 After the conclusion of [Eurucamp](http://2014.eurucamp.org/) we should have

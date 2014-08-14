@@ -12,8 +12,6 @@ tags:
 - opensource
 ---
 
-### The Enterprise Javascript MVC Framework.
-
 Oraculum is a [javascript MVC framework](http://todomvc.com/architecture-examples/oraculum/) and a collection of `mixin`s for [Backbone](http://backbonejs.org/) `Model`s, `Collection`s and `View`s written for [FactoryJS](https://github.com/lookout/factoryjs/). It inherits all of its application structure, many behaviors, and is generally inspired by [Chaplin](http://chaplinjs.org/).
 
 Why another JavaScript MV* framework?

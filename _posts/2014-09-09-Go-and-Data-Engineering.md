@@ -8,14 +8,19 @@ tags:
 - Go
 --- 
 
-Engineering@lookout diiferentiates itself with its embrace of a heterogeneous coding environment.
-Although Ruby usually carries the day for server-side components, we write in Java, Objective-C, BASH, R, C, Scala, Python, and Go.
+Engineering at [Lookout](https://github.com/lookout) diiferentiates itself with
+its embrace of a heterogeneous coding environment.  Although Ruby usually
+carries the day for server-side components, we write in Java, Objective-C,
+Bash, R, C, Scala, Python, and Go.
 
-Coded in Go, [Mudskipper](https://github.com/lookout/mudskipper) captures about 20 million events per day from 7 MySQL tables.
+One such project built in Go we're open sourcing today:
+[Mudskipper](https://github.com/lookout/mudskipper), a utility for extracting
+change-data events from MySQL binlogs. Currently at Lookout, Mudskipper
+captures about 20 million events per day from 7 MySQL tables.
 
-When I set out to code Mudskipper, I had two goals in mind:
+When I set out to build Mudskipper, I had two goals in mind:
 
-  1. Find a way to capture change data for select tables in our MySQL databases.
+  1. Find a way to capture change-data for select tables in our MySQL databases.
   2. Explore novel features in Go like [channels](https://golang.org/doc/effective_go.html#channels) and [goroutines](https://golang.org/doc/effective_go.html#goroutines).
 
 What Is Change-Data?

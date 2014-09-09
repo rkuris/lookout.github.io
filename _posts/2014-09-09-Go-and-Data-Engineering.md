@@ -37,24 +37,18 @@ Mudskipper Takes A Different Approach
 With row-based binary logging enabled, Mudskipper can scan the binlog stream and selectively extract change events.
 Mudskipper decouples change-data capture from the event or app that caused the change.
 Decoupling lets us spread the data capture effort across multiple, independent processes and possibly across many CPUs.
-The banking application no longer needs custom logic and data definitions for each table.
+Database applications no longer need to maintain custom logic for capturing change-data.
 Auditing the application is further isolated from the app itself.
 
 Why Go?
 -------
-First, it''s fun to be on the avant-garde of new technology.
+First, it's fun to be in the avant-garde.
 
-Second, My background is in C, and Go feels like a well-planned, 21st century version of C.
+Second, my background is in C, and Go feels like a well-planned, 21st century version of C.
 
-Third, I have never much cottoned to object-oriented programming concepts.
-There are no classes in C. No classes, means no inheritance.
-Object construction is simply calling new() on a defined type. No constructors, factories, or destructor functions.
-
-Instead, Go implements OO concepts with a very light touch that I really appreciate.
-
-  - Modules live in a hierarchical namespace.
-  - Function attached to structs implements data hiding.
-  - Interfaces focus the developer on communication between objects.
+Third, I have never much cottoned to object-oriented languages.
+Go dispenses with classes and inheritance.
+See [Is Go an object-oriented language?](https://golang.org/doc/faq#Is_Go_an_object-oriented_language)
 
 Finally, goroutines and channels offered a simple approach to distributing the workload over more CPU cycles.
 Goroutines and channels also encourage a coder to think more about loose coupling and tight cohesion.

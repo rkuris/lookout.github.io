@@ -85,3 +85,5 @@ Morgan is a UX Researcher at Lookout, where she uses her understanding of resear
 <hr>
 
 The Grace Hopper Celebration of Women in Computing (GHC) conference will be held on October 8th in Phoenix, Arizona. Please join us to talk about security, mobile development, and the design of amazing mobile products.
+
+\- [Marc Chung](https://twitter.com/heisenthought/)

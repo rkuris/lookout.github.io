@@ -9,7 +9,9 @@ tags:
 - malware
 - software-engineering
 - grace-hopper-conference
+- womenintech
 - ghc
+- ghc14
 ---
 
 Lookout is attending this year’s Grace Hopper Celebration of Women in Computing.  We're equally thrilled to share that we're also speaking about our recent work on improving privacy and security on the internet. I'd like to highlight the speakers, their talks, and their thoughts on GHC 2014.

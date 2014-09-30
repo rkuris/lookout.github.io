@@ -12,7 +12,7 @@ tags:
 - ghc
 ---
 
-Lookout is attending this year’s Grace Hopper Celebration of Women in Computing.  We're equally thrilled to share that we're also speaking about our recent work on improving privacy and security on the internet. I'd like to highlight the speakers, their talks, and their thoughts on GCH 2014.
+Lookout is attending this year’s Grace Hopper Celebration of Women in Computing.  We're equally thrilled to share that we're also speaking about our recent work on improving privacy and security on the internet. I'd like to highlight the speakers, their talks, and their thoughts on GHC 2014.
 
 <a href="https://twitter.com/jxiej" style="float:left;padding:0.4em 0.1em 0em 0.35em;border:1px solid #ccc;margin:0.5em 1em;border-radius:0.5em;" target="_blank">
   <img src="/images/post-images/grace-hopper-conference/jing-xie.jpg" style="width:280px;" alt="Jing Xie"/>
@@ -28,13 +28,13 @@ Mobile devices, such as smartphones, have become a necessity for people. Conveni
 
 *Jing, what's the big takeaway from your talk?*
 
- > Malware analysis and reverse engineering is a niche industry. The skills required are rarely taught at school making it a difficult industry to break to into, especially for women. The goal of my talk is to explain why malware analysis is interesting and how to acquire those skills. I hope the audience leaves with an understanding that malware is a real problem, and that the industry needs more practitioners to defend us from malicious hackers.
+ > Malware analysis and reverse engineering is a niche industry. The skills required are rarely taught at school making it a difficult industry to break into, especially for women. The goal of my talk is to explain why malware analysis is interesting and how to acquire those skills. I hope the audience leaves with an understanding that malware is a real problem, and that the industry needs more practitioners to defend us from malicious hackers.
 
 *What are you most looking forward to about Grace Hopper Conference this year?*
 
  > I first attended GHC while I was in graduate school through their gracious sponsorship. I have continued to rely on the valuable life lessons learned from other women in technology and have become inspired to contribute back to the community. I am looking forward to meeting more passionate and successful women at GHC and making a difference in the community.
 
-Jing Xie is a Security Analyst at Lookout. In 2011, Jing was a Recipient of the Grace Hopper Celebration Conference Scholarship. Jing's talk is scheduled at <u>12:00PM on Thursday in the Security & Privacy track</u>.
+Jing Xie is a Security Analyst at Lookout. In 2011, Jing was a recipient of the Grace Hopper Celebration Conference Scholarship. Jing's talk is scheduled at <u>12:00PM on Thursday in the Security & Privacy track</u>.
 
 <hr>
 

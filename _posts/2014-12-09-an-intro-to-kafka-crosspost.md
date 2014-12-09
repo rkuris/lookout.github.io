@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: An Introduction to Kafka (cross-post)
 tags:
 - operations

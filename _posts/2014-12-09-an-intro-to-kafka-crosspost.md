@@ -17,7 +17,7 @@ Kafka](http://sysadvent.blogspot.com/2014/12/day-4-introduction-to-kafka.html)**
 > jumping off points to where to learn more about accomplishing that near the
 > end of this post.*
 
-At a high-levle, the Lookout engineering team has been migrating to
+At a high-level, the Lookout engineering team has been migrating to
 [Kafka](http://kafka.apache.org) as an alternative to
 [ActiveMQ](http://activemq.apache.org/) that better meets the evolving needs of
 the Lookout service-oriented architecture.

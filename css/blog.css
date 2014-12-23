@@ -8,6 +8,7 @@ body {
   margin-right:auto;
   padding-left: 40px;
   padding-right: 40px;
+  width: 75%;
 }
 
 h2,h3 {
@@ -42,12 +43,12 @@ h1 {
 
 #posts {
   float: left;
-  width: 60%;
+  width: 65%;
 }
 
 #sidebar {
   float: right;
-  width:35%;
+  width: 30%;
 }
 
 a {

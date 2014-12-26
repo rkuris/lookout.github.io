@@ -44,7 +44,7 @@ improvements.
 
 ## JRuby
 
-In JRuby [1.7.14](http://jruby.org/2014/06/24/jruby-1-7-13.html) and
+In JRuby [1.7.13](http://jruby.org/2014/06/24/jruby-1-7-13.html) and
 [1.7.14](http://jruby.org/2014/08/27/jruby-1-7-14.html) the
 [LoadService](http://jruby.org/apidocs/org/jruby/runtime/load/LoadService.html)
 was refactored quite a bit to support operations such as: `File.exists?`,

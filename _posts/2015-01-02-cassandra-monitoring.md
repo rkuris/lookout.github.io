@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Monitoring cassandra"
+title: "Reliably monitoring Cassandra with Statsd"
 tags:
 - cassandra
 - opensource
 - monitoring
 ---
+
 
 I'm a newbie at Lookout, but already loving working here. One of the cool projects
 I was asked to help on was to merge the few Cassandra instances we have at Lookout
@@ -86,4 +87,4 @@ including options to change the port number or reporting interval.
 With this easily-cheffable plugin, we're off to add additional monitoring
 to our cassandra clusters. What a great way to start 2015!
 
-- [Ron Kuris](mailto:swcafe@gmail.com)
+- [Ron Kuris](https://github.com/rkuris)

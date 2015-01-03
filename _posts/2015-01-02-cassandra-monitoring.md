@@ -65,7 +65,7 @@ infrastructure, so we forked and created a
 
 If you want statsd for cassandra, it's super easy now. First, grab these two jars:
  
-    curl -L http://dl.bintray.com/lookout/systems/com/github/lookout/metrics/agent/1.0/agent-1.0.jar -o agent-1.0.jar
+    curl -L https://dl.bintray.com/lookout/systems/com/github/lookout/metrics/agent/1.0/agent-1.0.jar -o agent-1.0.jar
     curl -L https://oss.sonatype.org/content/groups/public/com/bealetech/metrics-statsd/2.3.0/metrics-statsd-2.3.0.jar -o metrics-statsd-2.3.0.jar
 
 Put these jars in cassandra's lib directory.

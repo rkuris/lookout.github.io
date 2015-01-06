@@ -9,7 +9,7 @@ tags:
 
 
 Every year, thousands of open source hackers and enthusiasts flock to
-[Brussles](https://en.wikipedia.org/wiki/Brussels) in Belguim for
+[Brussels](https://en.wikipedia.org/wiki/Brussels) in Belgium for
 [FOSDEM](https://fosdem.org/2015/), the Free and Open Source Developers
 European Meeting. In short, FOSDEM is a place for thousands of self-organizing
 and passionate open source hackers to share code, tools and ideas while

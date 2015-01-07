@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>The time is</title>
+        <style type="text/css">
+            body {
+                font-family: verdana, sans-serif;
+                padding: 1em;
+            }
+            .column {
+                width: 300px;
+                text-align: center;
+                float: left;
+                padding: 10px;
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+        </style>
+<!--[if IE]><script type="text/javascript" src="scripts/excanvas.js"></script><![endif]-->
+<script type="text/javascript" src="scripts/coolclock.js"></script>
+<script type="text/javascript" src="scripts/moreskins.js"></script>
+    </head>
+    <body onload="CoolClock.findAndCreateClocks()">
+        <div class="column">
+            <canvas id="clock_pst" class="CoolClock:classic:150::-8:showDigital leftRightPad"></canvas>
+            San Francisco
+        </div>
+
+        <div class="column">
+            <canvas id="clock_est" class="CoolClock:classic:150:noSeconds:-6:showDigital leftRightPad"></canvas>
+            Toroton, Boston, Washington D.C.
+        </div>
+
+        <div class="column">
+            <canvas id="clock_gmt" class="CoolClock:classic:150:noSeconds:0:showDigital leftRightPad"></canvas>
+            London, Dublin
+        </div>
+
+        <div class="column">
+            <canvas id="clock_cet" class="CoolClock:classic:150:noSeconds:1:showDigital leftRightPad"></canvas>
+            Munich
+        </div>
+
+        <div class="column">
+            <canvas id="clock_jpt" class="CoolClock:classic:150:noSeconds:9:showDigital leftRightPad"></canvas>
+            Tokyo
+        </div>
+    </body>
+</html>

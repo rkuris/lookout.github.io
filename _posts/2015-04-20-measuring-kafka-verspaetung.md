@@ -36,7 +36,7 @@ embarked on writing a new daemon to help: **[Verspätung](https://github.com/loo
 
 ## Meet Verspätung
 
-<img src="images/verspaetung.png" align="right" width="200"/>
+<img src="/images/verspaetung.png" align="right" width="200"/>
 
 [Verspätung](https://github.com/lookout/verspaetung#readme) is a
 [Groovy](http://groovy-lang.org) based daemon which implements a few key
@@ -110,7 +110,7 @@ both Kafka and Zookeeper is completely decoupled from the recording of metrics.
 This allows for a very granular time-period for reporting metrics or a very
 coarse one depending on your needs.
 
-<center><img src="images/post-images/verspaetung/grat-delay.png"/><em>Delay for
+<center><img src="/images/post-images/verspaetung/grat-delay.png"/><em>Delay for
 a production consumer over 24 hours</em></center>
 
 Currently by default, Verspätung will use our [forked metrics-datadog

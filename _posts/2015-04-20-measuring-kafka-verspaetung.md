@@ -110,7 +110,7 @@ both Kafka and Zookeeper is completely decoupled from the recording of metrics.
 This allows for a very granular time-period for reporting metrics or a very
 coarse one depending on your needs.
 
-<center><img src="/images/post-images/verspaetung/grat-delay.png"/><em>Delay for
+<center><img src="/images/post-images/verspaetung/grat-delay.png"/><br/><em>Delay for
 a production consumer over 24 hours</em></center>
 
 Currently by default, Verspätung will use our [forked metrics-datadog

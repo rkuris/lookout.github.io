@@ -21,17 +21,20 @@ Burton](https://github.com/solarce) wrote up a good [intro to Kafka](http://sysa
 One key principle with Kafka's design, is that consumers store an **offset**
 into the commit log for a topic/partition. This means that for a single topic
 (e.g. `device_events`) I can easily have hundreds, if not thousands, of
-consumers with no additional storage requirements on the Kafka cluster.
+consumers with no additional storage requirements on the Kafka cluster, since
+each new consumer only needs to store a single integer offset.
 
 A drawback of this approach is that understanding how "behind" a single
-consumer group might be behind the "latest" for a Kafka topic can be difficult
-to discover. Most consumers will use [Zookeeper](http://zookeeper.apache.org)
-for storing their offsets, while Kafka topics store their "latest offset"
-inside of Kafka itself.
+consumer group might be from the "latest" for a Kafka topic can be difficult to
+discover. Most consumers use [Zookeeper](http://zookeeper.apache.org) by
+default for storing their offsets, while Kafka topics store their "latest
+offset" inside of Kafka itself.
 
 
 Unable to find a suitable solution to track and report on this information, I
-embarked on writing a new daemon to help: **[Verspätung](https://github.com/lookout/verspaetung#readme)** (the German word for delay or lateness)
+embarked on writing a new daemon to help:
+**[Verspätung](https://github.com/lookout/verspaetung#readme)** (the German
+word for delay or lateness)
 
 
 ## Meet Verspätung
@@ -58,9 +61,8 @@ an event and register a metric for that consumer.
 Implementing this turned out to be far easier than I had anticipated thanks to
 the wonderful  [Curator](http://curator.apache.org) library, and its
 [TreeCache](http://curator.apache.org/curator-recipes/tree-cache.html) recipe.
-
-The implementation for this logic can be found in the "TreeWatcher" files [in the
-source
+The implementation for this logic can be found in the "TreeWatcher" files [in
+the source
 tree](https://github.com/lookout/verspaetung/tree/master/src/main/groovy/com/github/lookout/verspaetung/zk).
 
 
